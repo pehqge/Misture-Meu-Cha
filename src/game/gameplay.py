@@ -1,5 +1,5 @@
 from src.configs import SCREEN, WIDTH, Var, background
-from src.assets import coracao, coracao_dead, mesa, setav_d, setav_l, setav_u, setav_r, timerbox, fonte_score
+from src.assets import coracao, coracao_dead, mesa, setav_d, setav_l, setav_u, setav_r, timerbox, fonte_score, mini_high, fonte_mini_high
 from src.tools import meio
 from pygame import key, time, K_LEFT, K_RIGHT, K_UP, K_DOWN, K_a, K_s, K_d, K_w, mixer
 from src.entities.seta import Seta
@@ -21,7 +21,9 @@ def gameplay():
         Var.playing_gameplay_music = True
         
         
-    Var.tempo += 0.0004
+    Var.tempo += 0.0002
+    if Var.tempo >= 2:
+        Var.tempo = 2
     background()
     SCREEN.blit(mesa, (0, 418))
     
@@ -67,6 +69,7 @@ def gameplay():
     if Var.game_state == Var.state_gameplay and Var.timer is None:
         Var.timer = time.get_ticks()
     SCREEN.blit(timerbox, (meio(timerbox), 513))
+    SCREEN.blit(mini_high, (233, 500))
     global timer_str, segundos
     if Var.timer is not None:
         tempo_passado = time.get_ticks() - Var.timer
@@ -76,12 +79,16 @@ def gameplay():
         timer_text = fonte_score.render(timer_str, True, "#454653")
         timer_rect = timer_text.get_rect(center=(WIDTH//2, 575))
         SCREEN.blit(timer_text, timer_rect)
+        ministr = f"best {Var.score_max}"
+        if Var.score_max < timer_str:
+            ministr = "HIGH SCORE"
+        minihigh_text = fonte_mini_high.render(ministr, True, "#fefefe")
+        minihigh_rect = minihigh_text.get_rect(center=(288.8, 518))
+        SCREEN.blit(minihigh_text, minihigh_rect)
 
     if segundos >= 1:
-        # print("segundo")
         Var.contador += 1
-        if Var.contador == 40//Var.tempo:
-            # print("append")
+        if Var.contador >= 40//Var.tempo:
             Seta.lista_setas[Var.idx] = Seta(Var.idx)
             Var.idx += 1
             if Var.idx == 8:
@@ -109,5 +116,6 @@ def mata():
     global timer_str
     if Var.cor_mortos == 3:
         Var.score = timer_str
-        Var.game_state = Var.state_gameover
         Var.idx = 0
+        Var.contador = 0
+        Var.game_state = Var.state_gameover

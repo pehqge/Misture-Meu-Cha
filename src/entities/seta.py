@@ -8,11 +8,8 @@ class Seta:
     lista_tipos = []
     def __init__(self, idx):
         minvel = 1.5**Var.tempo
-        maxvel = 3**Var.tempo
+        maxvel = 2.4**Var.tempo
         self.idx = idx
-        if Var.tempo > 2:
-            minvel = 1.5**2
-            maxvel = 9
         self.velocidade = random.uniform(minvel, maxvel)
         self.opacidade = 255
         self.eopacidade = 0

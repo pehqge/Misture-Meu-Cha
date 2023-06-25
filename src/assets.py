@@ -48,12 +48,14 @@ denovo_f = image.load("assets/denovo_f.png").convert_alpha()
 highscore_star = image.load("assets/highscore_star.png").convert_alpha()
 missed = image.load("assets/missed.png").convert_alpha()
 acerto = image.load("assets/acerto.png").convert_alpha()
+mini_high = image.load("assets/mini_high.png").convert_alpha()
 
 
 # fontes
 fonte_scoremax = font.Font("assets/fonte.ttf", 22)
 fonte_score = font.Font("assets/fonte.ttf", 62)
 fonte_creditos = font.Font("assets/fonte.ttf", 20)
+fonte_mini_high = font.Font("assets/fonte.ttf", 14)
 
 # musica
 som_botao = mixer.Sound("assets/botao.wav")
