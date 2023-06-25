@@ -1,12 +1,27 @@
-from src.configs import SCREEN, WIDTH, state_gameover, background, state_gameplay
+from src.configs import SCREEN, WIDTH, Var, background
 from src.assets import coracao, coracao_dead, mesa, setav_d, setav_l, setav_u, setav_r, timerbox, fonte_score
-from src.tools import update_game_display, meio
-from pygame import key, time, K_LEFT, K_RIGHT, K_UP, K_DOWN
-from src.entities.seta import Seta, lista_setas
+from src.tools import meio
+from pygame import key, time, K_LEFT, K_RIGHT, K_UP, K_DOWN, K_a, K_s, K_d, K_w, mixer
+from src.entities.seta import Seta
 from src.entities.botao import b_sair
+from src.entities.xicara import xicara_gameplay
 
 def gameplay():
-    global game_state, timer, timer_str, lista_setas, contador, segundos, cor_mortos
+    if Var.playing_music or Var.playing_dead or Var.playing_high:
+        mixer.music.fadeout(200)
+        mixer.music.set_volume(0.3)
+        Var.playing_music = False
+        Var.playing_dead = False
+        Var.playing_high = False
+        
+    if not Var.playing_gameplay_music:
+        mixer.music.load("assets/gameplay.wav")
+        mixer.music.play(-1)
+        mixer.music.set_volume(0.2)
+        Var.playing_gameplay_music = True
+        
+        
+    Var.tempo += 0.0004
     background()
     SCREEN.blit(mesa, (0, 418))
     
@@ -15,28 +30,28 @@ def gameplay():
     b_sair.draw()
     
     # coracoes
-    draw_coracoes(cor_mortos)
+    draw_coracoes(Var.cor_mortos)
         
     # setas
     keys = key.get_pressed()
-    if keys[K_LEFT]:
+    if keys[K_LEFT] or keys[K_a]:
         setav_l.set_alpha(255)
         xicara_gameplay.angulo = max(xicara_gameplay.angulo - 4, 0)
         xicara_gameplay.cx = max(xicara_gameplay.cx - 4, 70)
     else:
         setav_l.set_alpha(168)
-    if keys[K_RIGHT]:
+    if keys[K_RIGHT] or keys[K_d]:
         xicara_gameplay.angulo = min(xicara_gameplay.angulo + 4, 65)
         xicara_gameplay.cx = min(xicara_gameplay.cx + 4, 110)
         setav_r.set_alpha(255)
     else:
         setav_r.set_alpha(168)
-    if keys[K_UP]:
+    if keys[K_UP] or keys[K_w]:
         xicara_gameplay.cy = max(xicara_gameplay.cy - 2, 260)
         setav_u.set_alpha(255)
     else:
         setav_u.set_alpha(168)
-    if keys[K_DOWN]:
+    if keys[K_DOWN] or keys[K_s]:
         xicara_gameplay.cy = min(xicara_gameplay.cy + 2, 300)
         setav_d.set_alpha(255)
     else:
@@ -49,11 +64,12 @@ def gameplay():
     SCREEN.blit(setav_d, (188, 170))
     
     # score
-    if game_state == state_gameplay and timer is None:
-        timer = time.get_ticks()
+    if Var.game_state == Var.state_gameplay and Var.timer is None:
+        Var.timer = time.get_ticks()
     SCREEN.blit(timerbox, (meio(timerbox), 513))
-    if timer is not None:
-        tempo_passado = time.get_ticks() - timer
+    global timer_str, segundos
+    if Var.timer is not None:
+        tempo_passado = time.get_ticks() - Var.timer
         minutos = int(tempo_passado / 60000)
         segundos = int((tempo_passado % 60000) / 1000)
         timer_str = f"{minutos}:{segundos:02d}"
@@ -62,28 +78,26 @@ def gameplay():
         SCREEN.blit(timer_text, timer_rect)
 
     if segundos >= 1:
-        contador += 1
-        if contador == 30:
-            lista_setas.append(Seta())
-            contador = 0
+        # print("segundo")
+        Var.contador += 1
+        if Var.contador == 40//Var.tempo:
+            # print("append")
+            Seta.lista_setas[Var.idx] = Seta(Var.idx)
+            Var.idx += 1
+            if Var.idx == 8:
+                Var.idx = 0
+            Var.contador = 0
         
     
-    for seta in lista_setas:
+    for seta in [x for x in Seta.lista_setas if x != None]:
+        seta.y += seta.velocidade
+        seta.draw()
+        if seta.verificador:
+            seta.win()
         if seta.y > 220:
             seta.lose()
-            if seta.lose():
-                continue
-            
-            if seta.opacidade < 0:
-                lista_setas.remove(seta)
-                mata()
-                continue
-        seta.move()
-        seta.draw()
+            mata()            
     
-    update_game_display()
-
-
 def draw_coracoes(num_mortos):
     for i in range(3):
         if i < 3 - num_mortos:
@@ -92,9 +106,8 @@ def draw_coracoes(num_mortos):
             SCREEN.blit(coracao_dead, (245 + 35 * i, 314))
 
 def mata():
-    global cor_mortos, xicara_gameplay, game_state, score
-    cor_mortos += 1
-    xicara_gameplay.update_face(cor_mortos)
-    if cor_mortos == 3:
-        score = timer_str
-        game_state = state_gameover
+    global timer_str
+    if Var.cor_mortos == 3:
+        Var.score = timer_str
+        Var.game_state = Var.state_gameover
+        Var.idx = 0

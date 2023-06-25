@@ -1,88 +1,110 @@
 import random
-from src.assets import acerto, seta_l, seta_u, seta_d, seta_r, missed
-from pygame import time
-from src.configs import SCREEN
-
-
-lista_setas = []
+from src.entities.xicara import xicara_gameplay
+from pygame import image
+from src.configs import SCREEN, Var
 
 class Seta:
-    global lista_setas
-    def __init__(self):
-        self.velocidade = random.randint(2, 8) #TESTANDO
+    lista_setas = [None for i in range(8)]
+    lista_tipos = []
+    def __init__(self, idx):
+        minvel = 1.5**Var.tempo
+        maxvel = 3**Var.tempo
+        self.idx = idx
+        if Var.tempo > 2:
+            minvel = 1.5**2
+            maxvel = 9
+        self.velocidade = random.uniform(minvel, maxvel)
         self.opacidade = 255
-        self.y = -60 #TESTAR
+        self.eopacidade = 0
+        self.y = -60
         self.ye = 183
-        self.last_tipo = None
         self.tipo = self.gerar_tipo()
         if self.tipo == 0: #esquerda
             self.x = 30.5
             self.xe = 48
             self.ya = 155
             self.xa = 51
-            self.img = seta_l
+            self.img = image.load("assets/seta_l.png").convert_alpha()
         elif self.tipo == 1: #cima
             self.x = 120
             self.xe = 122
             self.ya = 188
             self.xa = 134
-            self.img = seta_u
+            self.img = image.load("assets/seta_u.png").convert_alpha()
         elif self.tipo == 2: #baixo
             self.x = 188
             self.xe = 192
             self.ya = 188
             self.xa = 203
-            self.img = seta_d
+            self.img = image.load("assets/seta_d.png").convert_alpha()
         elif self.tipo == 3: #direita
             self.x = 258
             self.xe = 264
             self.ya = 155
             self.xa = 300
-            self.img = seta_r
-        self.error = missed
-        self.contador = True
-        
-    def move(self):
-        self.y += self.velocidade
+            self.img = image.load("assets/seta_r.png").convert_alpha()
+        self.error = image.load("assets/missed.png").convert_alpha()
+        self.acerto = image.load("assets/acerto.png").convert_alpha()
+        self.contador = 0
+        self.mata = None
+        self.verificador = False
         
     def draw(self):
         SCREEN.blit(self.img, (self.x, self.y))
         
     def lose(self):
+        if self.mata is None:
+            Var.cor_mortos += 1
+            xicara_gameplay.update_face(Var.cor_mortos)
+            self.mata = 1
         self.opacidade -= 40
         self.img.set_alpha(self.opacidade)
-        if self.contador:
-                self.contador = False
-                self.error_start_time = time.get_ticks()
-        self.current_time = time.get_ticks()
-        if self.current_time - self.error_start_time <= 1000:
-                SCREEN.blit(self.error, (self.xe, self.ye))
+        self.contador += 1
+        if self.contador <= 12:
+            self.error.set_alpha(self.eopacidade)
+            self.eopacidade += 30.5
+            SCREEN.blit(self.error, (self.xe, self.ye))
+        elif self.contador <= 35:
+            SCREEN.blit(self.error, (self.xe, self.ye))
+        elif self.contador <= 48:
+            self.eopacidade -= 21.5
+            self.error.set_alpha(self.eopacidade)
+            SCREEN.blit(self.error, (self.xe, self.ye))
+        else:
+            Seta.lista_setas[self.idx] = None
+            Seta.lista_tipos.remove(self.tipo)
                 
     def win(self):
-        global lista_setas
-        if self.contador:
-                self.contador = False
-                self.win_start_time = time.get_ticks()
-        self.current_time = time.get_ticks()
-        if self.current_time - self.win_start_time <= 1000:
-                SCREEN.blit(acerto, (self.xa, self.ya))
+        self.contador += 1
+        self.y = -200
+        if self.contador <= 12:
+            self.acerto.set_alpha(self.eopacidade)
+            self.eopacidade += 30.5
+            SCREEN.blit(self.acerto, (self.xa, self.ya))
+        elif self.contador <= 35:
+            SCREEN.blit(self.acerto, (self.xa, self.ya))
+        elif self.contador <= 48:
+            self.eopacidade -= 21.5
+            self.acerto.set_alpha(self.eopacidade)
+            SCREEN.blit(self.acerto, (self.xa, self.ya))
         else:
-            lista_setas.remove(self)
+            Seta.lista_setas[self.idx] = None
+            Seta.lista_tipos.remove(self.tipo)
                 
     def gerar_tipo(self):
         tipo = random.randint(0, 3)
-        if len(lista_setas) > 0:
-            last_tipo = lista_setas[-1].tipo
-            while tipo == last_tipo:
+        if len(Seta.lista_setas) > 0:
+            while tipo in Seta.lista_tipos[-2:]:
                 tipo = random.randint(0, 3)
+        Seta.lista_tipos.append(tipo)
         return tipo
     
     def clique(self):
         if self.tipo in [0, 3]:
-            if self.y >= 170 and self.y <= 190:
+            if self.y >= 145 and self.y <= 208:
                 return True
         elif self.tipo in [1, 2]:
-            if self.y >= 160 and self.y <= 180:
+            if self.y >= 130 and self.y <= 200:
                 return True
         return False
-            
+    

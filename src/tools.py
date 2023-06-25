@@ -1,7 +1,7 @@
 from json import load, dump
-from pygame import time, display
+from pygame import time
 from math import sin
-from src.configs import WIDTH, FPS, FramePerSec
+from src.configs import WIDTH, Var
 
 # funcoes do highscore
 def get_highscore():
@@ -10,7 +10,7 @@ def get_highscore():
 def set_highscore(score):
     with open("score.json", "w") as f:
         dump({"best": score}, f)
-score_max = get_highscore()
+Var.score_max = get_highscore()
 
 # alinha a imagem para o meio
 def meio(imagem):
@@ -25,8 +25,3 @@ def seno(vel, tempo, longe, Yinicial):
 	y = sin(t/vel) * longe + Yinicial 
 	y = int(y)
 	return y
-
-# atualizacao de FPS
-def update_game_display():
-    display.update()
-    FramePerSec.tick(FPS)

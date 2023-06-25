@@ -15,7 +15,7 @@ class Xicara:
         self.angulo = 0
         self.cx = x+98
         self.cy = y-38
-        self.velocidade = 0.5
+        self.velocidade = 2
 
     def draw(self):
         SCREEN.blit(self.xic_tras, (self.x, self.y))

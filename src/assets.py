@@ -1,4 +1,4 @@
-from pygame import image, font, init, display
+from pygame import image, font, init, display, mixer
 
 # inicializando para nao dar erro
 init()
@@ -54,3 +54,6 @@ acerto = image.load("assets/acerto.png").convert_alpha()
 fonte_scoremax = font.Font("assets/fonte.ttf", 22)
 fonte_score = font.Font("assets/fonte.ttf", 62)
 fonte_creditos = font.Font("assets/fonte.ttf", 20)
+
+# musica
+som_botao = mixer.Sound("assets/botao.wav")
