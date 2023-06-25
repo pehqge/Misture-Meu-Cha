@@ -22,7 +22,7 @@ def gameplay():
         Var.playing_gameplay_music = True
         
     # contador do tempo para alterar as velocidades
-    Var.tempo += 0.0003
+    Var.tempo += 0.0001
     if Var.tempo >= 2:
         Var.tempo = 2
         
