@@ -5,7 +5,7 @@ from src.assets import bg
 pygame.init()
 WIDTH = 360
 HEIGHT = 640
-FPS = 60
+FPS = 90
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 SCREEN.fill("#FFD8D7")
 pygame.display.set_caption("misture meu chá!")

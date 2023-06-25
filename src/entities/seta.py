@@ -7,10 +7,10 @@ class Seta:
     lista_setas = [None for i in range(8)]
     lista_tipos = []
     def __init__(self, idx):
-        minvel = 1.5**Var.tempo
-        maxvel = 2.4**Var.tempo
+        # minvel = 1.1**Var.tempo
+        # maxvel = 1.8**Var.tempo
         self.idx = idx
-        self.velocidade = random.uniform(minvel, maxvel)
+        self.velocidade = 1.5**Var.tempo
         self.opacidade = 255
         self.eopacidade = 0
         self.y = -60

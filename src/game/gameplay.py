@@ -21,7 +21,7 @@ def gameplay():
         Var.playing_gameplay_music = True
         
         
-    Var.tempo += 0.0002
+    Var.tempo += 0.0003
     if Var.tempo >= 2:
         Var.tempo = 2
     background()
@@ -88,7 +88,7 @@ def gameplay():
 
     if segundos >= 1:
         Var.contador += 1
-        if Var.contador >= 40//Var.tempo:
+        if Var.contador >= 55//Var.tempo:
             Seta.lista_setas[Var.idx] = Seta(Var.idx)
             Var.idx += 1
             if Var.idx == 8:
