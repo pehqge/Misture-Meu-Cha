@@ -8,20 +8,20 @@ from src.entities.xicara import xicara_gameplay
 
 class Botao:
     def __init__(self, nome, nome_f, x, y, estado, fx=10, fy=7):
-        self.nome = nome
-        self.nome_f = nome_f
+        self.nome = nome #imagem da frente
+        self.nome_f = nome_f #imagem da sombra
         self.x = x
         self.y = y
-        self.fx = fx
+        self.fx = fx #posicao da sombra
         self.fy = fy
-        self.estado = estado
+        self.estado = estado #para qual estado que deve mudar
         self.pressed = False
 
     def draw(self):
         rect = Rect(self.x, self.y, self.nome.get_width(), self.nome.get_height())
-        if rect.collidepoint(mouse.get_pos()):
+        if rect.collidepoint(mouse.get_pos()): #animacao se passar o mouse por cima
             pos_texto = (self.x + self.fx/3, self.y + self.fy/7)
-            if self.pressed:
+            if self.pressed: #animacao quando apertado
                 pos_texto = (self.x + self.fx, self.y + self.fy)
         else:
             self.pressed = False
@@ -30,7 +30,7 @@ class Botao:
         SCREEN.blit(self.nome_f, (self.x + self.fx, self.y + self.fy))
         SCREEN.blit(self.nome, pos_texto)
     
-    def handle_event(self, event, Bool=False):
+    def handle_event(self, event, Bool=False): #muda de estado se for apertado
         rect = Rect(self.x, self.y, self.nome.get_width(), self.nome.get_height())
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
@@ -40,7 +40,7 @@ class Botao:
             if event.button == 1:
                 if rect.collidepoint(mouse.get_pos()):
                     if self.pressed:
-                        if Bool:
+                        if Bool: #booleana para saber se o botão reseta tudo se for apertado
                             Var.cor_mortos = 0
                             xicara_gameplay.update_face(0)
                             xicara_gameplay.angulo = 0
@@ -48,7 +48,7 @@ class Botao:
                             Var.highs = False
                             xicara_gameplay.cx = 119
                             xicara_gameplay.cy = 300
-                            Seta.lista_setas = [None for i in range(8)]
+                            Seta.lista_setas = [None for i in range(16)]
                             Seta.lista_tipos = []
                             Var.idx = 0
                             Var.tempo = 1

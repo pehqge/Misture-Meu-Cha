@@ -1,4 +1,4 @@
-from src.configs import background, SCREEN, Var
+from src.configs import background, SCREEN
 from src.assets import mesa, logo, pedro, cara_creditos
 from src.tools import meio
 from src.entities.xicara import Xicara
@@ -6,8 +6,9 @@ from src.entities.botao import b_voltar
 
 def creditos():
     
-    background()
-    # bg
+    background() #bg animado
+    
+    # itens de fundo
     SCREEN.blit(mesa, (0, 523))
     SCREEN.blit(logo, (-17, 63))
     SCREEN.blit(pedro, (meio(pedro), 275))

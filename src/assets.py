@@ -4,7 +4,7 @@ from pygame import image, font, init, display, mixer
 init()
 display.set_mode((360, 640))
 
-# imagem
+# imagens
 bg = image.load("assets/bg.png").convert_alpha()
 logo = image.load("assets/logo.png").convert_alpha()
 mesa = image.load("assets/mesa.png").convert_alpha()

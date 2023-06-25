@@ -1,7 +1,7 @@
 import pygame
 from src.assets import bg
 
-# Informacao do Jogo
+# Informacao do Jogo e de inicializacao
 pygame.init()
 WIDTH = 360
 HEIGHT = 640
@@ -13,28 +13,28 @@ pygame.display.set_icon(pygame.image.load("assets/icone.png"))
 FramePerSec = pygame.time.Clock()
 
     
-# Inicializacao de variaveis
-
+# Inicializacao de variaveis globais
 class Var:
+    # codigos dos estados
     state_menu = 0
     state_creditos = 1
     state_gameplay = 2
     state_gameover = 3
-    scroll = -83
-    timer = None
     game_state = state_menu
-    pausado = False
-    highs = False
-    cor_mortos = 0
-    contador = 0
-    score = ''
-    score_max = ''
-    tempo = 1
-    idx = 0
-    playing_music = False
-    playing_gameplay_music = False
-    playing_high = False
-    playing_dead = False
+    
+    scroll = -83 # velocidade do scroll do bg
+    timer = None #controla o timer do gameplay
+    highs = False #verifica se o highscore foi atingido
+    cor_mortos = 0 #numero de coracoes mortos
+    contador = 0 #contador de frames para gameplay
+    score = '' #score atual
+    score_max = '' #highscore
+    tempo = 1 #tempo para usar no controle da velocidade
+    idx = 0 #id unico para as setas
+    playing_music = False #musica menu
+    playing_gameplay_music = False #musica gameplay
+    playing_high = False #musica quando faz highscore
+    playing_dead = False #musica quando morre
 
 
 # incializacao do background

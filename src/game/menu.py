@@ -8,23 +8,23 @@ from pygame import mixer
 
 
 def menu():
+    Var.tempo = 1 #reinicia o contador de tempo
+    
+    # inicializador de musica
     if Var.playing_gameplay_music or Var.playing_dead or Var.playing_high:
         mixer.music.fadeout(200)
         Var.playing_gameplay_music = False
         Var.playing_dead = False
         Var.playing_high = False
-        
-    
     if not Var.playing_music:
         mixer.music.load("assets/menu.wav")
         mixer.music.play(-1)
         mixer.music.set_volume(0.3)
         Var.playing_music = True
     
-    
-    Var.tempo = 1
     background()
-    # high score
+    
+    # marcador do highscore no topo
     best_score = fonte_scoremax.render("best score   " + str(Var.score_max), True, "#F38489")
     best_score_rect = best_score.get_rect(center=(WIDTH//2, 40))
     SCREEN.blit(best_score, best_score_rect)
