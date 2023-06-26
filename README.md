@@ -53,10 +53,10 @@ Para mais detalhes sobre o projeto e o processo de criação, veja o PDF do rela
 
 <div align="center">
     <div style="display: flex; align-items: center;">
-        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/0f4648d3-1dd9-4847-aadf-61c25494825e" alt="Tela Menu">
-        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/94908f3b-120b-4adf-93a4-4344f59c2c7c" alt="Tela créditos">
-        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/8ccdde92-9f27-4367-b8e0-bfaea8c9759c" alt="Tela Gameplay">
-        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/3a2c3f12-f632-4201-b2bc-233c69f5e3a1" alt="Tela GameOver">
+        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/0f4648d3-1dd9-4847-aadf-61c25494825e" alt="Tela Menu"  width="50%">
+        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/94908f3b-120b-4adf-93a4-4344f59c2c7c" alt="Tela créditos" width="50%">
+        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/8ccdde92-9f27-4367-b8e0-bfaea8c9759c" alt="Tela Gameplay" width="50%">
+        <img src="https://github.com/pehqge/Misture-Meu-Cha/assets/117869493/3a2c3f12-f632-4201-b2bc-233c69f5e3a1" alt="Tela GameOver" width="50%">
 </div>
 
 
