@@ -1,5 +1,5 @@
 # Misture Meu Chá!
-Este jogo foi realizado como Projeto Final da disciplina Programação Orientada a Objetos I - Universidade Federal de Santa Catarina.
+Este jogo foi realizado como Projeto Final da disciplina Programação Orientada a Objetos I - Universidade Federal de Santa Catarina. Meu primeiro jogo feito em programação.
 
 
 <div align="center">
