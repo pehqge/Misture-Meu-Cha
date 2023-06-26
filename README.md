@@ -15,5 +15,7 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 
 - O jogador deverá esperar que a seta correspondente desça até a seta gabarito, quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado as teclas correspondentes:
 
-![Artboard 610](https://github.com/pehqge/misture-meu-cha/assets/117869493/228a1ec1-6859-49b0-b8e3-1c7498843e0c)
+<p align="center">
+    <img src="(https://github.com/pehqge/misture-meu-cha/assets/117869493/228a1ec1-6859-49b0-b8e3-1c7498843e0c)" alt="Descrição da Imagem">
+</p>
 
