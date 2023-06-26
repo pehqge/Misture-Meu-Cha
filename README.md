@@ -11,10 +11,6 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 • A pontuação é calculada pelo tempo que o jogador permanece vivo, o objetivo do jogo é ficar vivo pelo máximo de tempo possível!
 
 # Como jogar
-• As setas brancas no meio da tela:
+- As setas brancas no meio da tela: ![image](https://github.com/pehqge/misture-meu-cha/assets/117869493/b04cbe45-09e1-473d-b6da-378fe74998d9) indicam o gabarito de onde a seta deve ser pressionada para pontuar. Após 1 segundo de jogo, as setas começam a aparecer.
 
-![image](https://github.com/pehqge/misture-meu-cha/assets/117869493/b04cbe45-09e1-473d-b6da-378fe74998d9)
-
-indicam o gabarito de onde a seta deve ser pressionada para pontuar. Após 1 segundo de jogo, as setas começam a aparecer.
-
-• O jogador deverá esperar que a seta correspondente desça até a seta gabarito, quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado as teclas correspondentes:![image](https://github.com/pehqge/misture-meu-cha/assets/117869493/885d9d88-e453-47aa-bdbc-95ab78844248)
+- O jogador deverá esperar que a seta correspondente desça até a seta gabarito, quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado as teclas correspondentes:![image](https://github.com/pehqge/misture-meu-cha/assets/117869493/885d9d88-e453-47aa-bdbc-95ab78844248)
