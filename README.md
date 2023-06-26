@@ -14,5 +14,4 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 
 
 
-https://github.com/pehqge/misture-meu-cha/assets/117869493/aadddc22-31ae-48b9-9faa-4266024396bf
-
+![Screenshot 25-06-2023 at 21 47](https://github.com/pehqge/misture-meu-cha/assets/117869493/bc19b2b3-4a80-4286-b617-5bd4b0d58bf7)
