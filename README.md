@@ -19,7 +19,7 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 - A cada erro, uma vida é perdida. São 3 vidas (representadas pelo coração), ao perder 3 vidas o jogo acaba.
 - O jogador deverá esperar que a seta correspondente desça até a seta gabarito. Quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado a tecla correspondente:
 <p align="center">
-    <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/228a1ec1-6859-49b0-b8e3-1c7498843e0c" alt="Descrição da Imagem">
+    <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/8a28af6c-0534-4318-aa48-a260b18e39f4" alt="Descrição da Imagem">
 </p>
 
 ## Como instalar
