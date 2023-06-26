@@ -43,3 +43,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Relatório
+
+Para mais detalhes sobre o projeto e o processo de criação, veja o PDF do relatório disponibilizado no arquivo.
