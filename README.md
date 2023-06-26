@@ -24,6 +24,7 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 </div>
 
 
+
 ## Como instalar
 
 Para executar o jogo, é necessário que o usuário tenha Python instalado na máquina.
