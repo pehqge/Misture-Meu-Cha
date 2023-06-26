@@ -60,6 +60,9 @@ Para mais detalhes sobre o projeto e o processo de criação, veja o PDF do rela
     </div>
 </div>
 
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 
