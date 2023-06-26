@@ -4,7 +4,7 @@ Este jogo foi realizado como Projeto Final da disciplina Programação Orientada
 <div align="center">
     <div style="display: flex; justify-content: center; align-items: center;">
     <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/02d6963f-91d3-4afa-9369-294f08c965dc" alt="Descrição da Imagem" width="45%">
-    <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/bc19b2b3-4a80-4286-b617-5bd4b0d58bf7" alt="Descrição da Imagem" width="45%">
+    <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/bc19b2b3-4a80-4286-b617-5bd4b0d58bf7" alt="Descrição da Imagem" width="25%">
     </div>
 </div>
 
