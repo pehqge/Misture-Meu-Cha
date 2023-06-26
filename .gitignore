@@ -6,3 +6,4 @@ __pycache__/
 score.json
 *.json
 score.json
+.DS_Store
