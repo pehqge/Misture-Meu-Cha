@@ -1,5 +1,5 @@
 # Misture Meu Chá!
-Este jogo foi realizado como Projeto Final da disciplina Programação Orientada a Objetos I da UFSC.
+Este jogo foi realizado como Projeto Final da disciplina Programação Orientada a Objetos I - Universidade Federal de Santa Catarina.
 
 
 <div align="center">
@@ -12,12 +12,12 @@ Este jogo foi realizado como Projeto Final da disciplina Programação Orientada
 
 
 ## Sobre o jogo
-O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do desenvolvedor: "Guitar Hero" e "Club Penguin". O objetivo
- do jogo é seguir o ritmo das setas que descem pela tela e pressioná-las no momento correto para misturar o chá da xícara e se manter vivo!
+O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do desenvolvedor: "Guitar Hero" e "Club Penguin". O objetivo do jogo é seguir o ritmo das setas que descem pela tela e pressioná-las no momento correto para misturar o chá da xícara e se manter vivo!
+
 ## Como jogar
-- As setas brancas no meio da tela indicam o gabarito de onde a seta deve ser pressionada para pontuar. Após 1 segundo de jogo, as setas começam a aparecer.
+- As setas brancas no meio da tela indicam o gabarito correspondente à posição onde a seta deve ser pressionada para pontuar. Após 1 segundo de jogo, as setas começam a aparecer.
 - A cada erro, uma vida é perdida. São 3 vidas (representadas pelo coração), ao perder 3 vidas o jogo acaba.
-- O jogador deverá esperar que a seta correspondente desça até a seta gabarito, quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado as teclas correspondentes:
+- O jogador deverá esperar que a seta correspondente desça até a seta gabarito. Quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado a tecla correspondente:
 <p align="center">
     <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/228a1ec1-6859-49b0-b8e3-1c7498843e0c" alt="Descrição da Imagem">
 </p>
