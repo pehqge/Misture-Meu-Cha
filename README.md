@@ -15,9 +15,12 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
     <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/228a1ec1-6859-49b0-b8e3-1c7498843e0c" alt="Descrição da Imagem">
 </p>
 ## Como instalar
+
 Para executar o jogo, é necessário que o usuário tenha Python instalado na máquina.
 - Com o python instalado, vá ao terminal do computador aberto na pasta do jogo e escreva:
+  
 ### Mac
+
 ```sh
 pip3 install -r requirements.txt
 ```
