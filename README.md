@@ -1,6 +1,9 @@
 # Misture Meu Chá!
 
-![logo@5x](https://github.com/pehqge/misture-meu-cha/assets/117869493/02d6963f-91d3-4afa-9369-294f08c965dc){:width="1%"}
+<p align="center">
+    <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/02d6963f-91d3-4afa-9369-294f08c965dc" alt="Descrição da Imagem" width="50%">
+</p>
+
 Este jogo foi realizado como Projeto Final da disciplina Programação Orientada a Objetos I da UFSC.
 <p align="center">
     <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/bc19b2b3-4a80-4286-b617-5bd4b0d58bf7" alt="Descrição da Imagem">
