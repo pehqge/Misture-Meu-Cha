@@ -18,9 +18,11 @@ O jogo misture meu chá! foi inspirado em dois jogos clássicos da infância do 
 - As setas brancas no meio da tela indicam o gabarito correspondente à posição onde a seta deve ser pressionada para pontuar. Após 1 segundo de jogo, as setas começam a aparecer.
 - A cada erro, uma vida é perdida. São 3 vidas (representadas pelo coração), ao perder 3 vidas o jogo acaba.
 - O jogador deverá esperar que a seta correspondente desça até a seta gabarito. Quando as duas estiverem sobrepostas, o jogador deverá apertar no teclado a tecla correspondente:
+- 
 <p align="center">
     <img src="https://github.com/pehqge/misture-meu-cha/assets/117869493/8a28af6c-0534-4318-aa48-a260b18e39f4" alt="Descrição das teclas" width="40%>
 </p>
+
 
 ## Como instalar
 
