@@ -5,5 +5,3 @@ __pycache__/
 *.so
 score.json
 *.json
-score.json
-.DS_Store
